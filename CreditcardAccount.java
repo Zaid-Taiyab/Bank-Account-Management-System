@@ -1,6 +1,8 @@
+import javax.swing.*;
+
 public class CreditcardAccount extends BankAccount {
     private double limit = 700;
-    private double balance=-500;
+//    private double balance=-500;
     @Override
     public boolean debit(int y) {
         if (y<=limit){
@@ -21,11 +23,11 @@ public class CreditcardAccount extends BankAccount {
         accountID=id;
     }
     public void Payment(double p){
-        if (balance+limit<=p){
+        if (p<=balance+limit && p>=0){
             balance-=p;
         }
         else {
-            System.out.println("Error: Transaction failed. Amount exceeds credit limit");
+            JOptionPane.showMessageDialog(null, "Error: Transaction failed. Amount exceeds credit limit.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 

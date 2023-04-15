@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 public class SavingsAccount extends BankAccount {
     public boolean debit(int a) {
         if (a < balance) {
@@ -25,11 +26,10 @@ public class SavingsAccount extends BankAccount {
 
     @Override
     public void withdraw(double w) {
-        if (balance>=w) {
+        if (balance >= w) {
             balance -= w;
-        }
-        else {
-            System.out.println("Error: Insufficient Funds");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error: Insufficient Funds", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -43,3 +43,6 @@ public class SavingsAccount extends BankAccount {
         return "Type of Account : Savings\n"+"Account ID      : "+accountID+"\nCurrent Balance : $"+i;
     }
 }
+
+
+

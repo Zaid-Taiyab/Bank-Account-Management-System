@@ -22,7 +22,6 @@ public abstract class BankAccount {
     }
 
     public void setInterestRate(double interestRate) {
-
         this.interestRate = interestRate;
     }
     public abstract void applyInterest();
